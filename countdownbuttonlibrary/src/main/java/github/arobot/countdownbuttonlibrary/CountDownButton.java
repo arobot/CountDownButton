@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.widget.Button;
 
 /**
- * Created by Administrator on 2015/10/30 0030.
+ * Created by arobot on 2015/10/30 0030.
  */
 public class CountDownButton extends Button {
     /**
@@ -25,7 +25,7 @@ public class CountDownButton extends Button {
     /**
      * Max number ,count down from this
      */
-    private static int countLength;
+    private int countLength;
     /**
      * String formatter showing while counting down
      */
@@ -56,6 +56,7 @@ public class CountDownButton extends Button {
             this.countLength = a.getInt(R.styleable.CountDownButton_countDown, 0);
         }
         this.format = a.getString(R.styleable.CountDownButton_countDownStrFormatter);
+        this.countInterval = a.getInt(R.styleable.CountDownButton_countDownInterval, 1000);
         a.recycle();
     }
 
@@ -89,15 +90,15 @@ public class CountDownButton extends Button {
         this.canCountDown = canCountDown;
     }
 
-    public static int getCountLength() {
+    public int getCountLength() {
         return countLength;
     }
 
     /**
      * @param countLength
      */
-    public static void setCountLength(int countLength) {
-        CountDownButton.countLength = countLength;
+    public void setCountLength(int countLength) {
+       this.countLength = countLength;
     }
 
 
@@ -114,10 +115,31 @@ public class CountDownButton extends Button {
         this.format = format;
     }
 
-    private void startCountDown(int number, String format) {
-        this.countLength = number;
+    /**
+     * set count down attrs
+     *
+     * @param countDown count down from this number
+     * @param format    string formatter for your countting down label
+     */
+    public void setCountDown(int countDown, String format) {
+        this.countLength = countDown;
         this.format = format;
         setCanCountDown(true);
+    }
+
+    /**
+     * start count down without click this button,it needs call {@link #setCanCountDown(boolean)} or set "countDown" in xml first
+     *
+     * @return count down enable
+     */
+    public boolean startCountDown() {
+        if (canCountDown) {
+            defaultText = this.getText().toString();
+            count = countLength;
+            handler.removeMessages(0);
+            handler.sendEmptyMessage(0);
+        }
+        return canCountDown;
     }
 
     public int getCountInterval() {

@@ -19,10 +19,12 @@
         android:text="Hello World!" />
 
     <github.arobot.countdownbuttonlibrary.CountDownButton
+        android:id="@+id/countdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text"
+        android:text="点击倒计时"
         app:countDown="60"
-        app:countDownStrFormatter="倒计时%s秒"
-        android:text="点击倒计时" />
+        app:countDownInterval="2000"
+        app:countDownStrFormatter="倒计时%s秒" />
 </RelativeLayout>

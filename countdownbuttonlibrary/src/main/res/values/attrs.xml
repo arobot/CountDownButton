@@ -3,5 +3,6 @@
     <declare-styleable name="CountDownButton">
         <attr name="countDown" format="integer" />
         <attr name="countDownStrFormatter" format="string|reference" />
+        <attr name="countDownInterval" format="integer" />
     </declare-styleable>
 </resources>
