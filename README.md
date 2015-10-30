@@ -14,9 +14,9 @@ Extends Button with count down founction
         app:countDownInterval="2000"
         app:countDownStrFormatter="倒计时%s秒" />
 
-"countDown" count down from this number
-"countDownInterval" count down interval,velocity of your count down event
-"countDownStrFormatter" string formatter for your countting down label
+"countDown" count down from this number<br>
+"countDownInterval" count down interval,velocity of your count down event<br>
+"countDownStrFormatter" string formatter for your countting down label<br>
 
 ###In java code
 
