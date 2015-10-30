@@ -1,0 +1,22 @@
+# CountDownButton
+Extends Button with count down founction
+
+
+##How to use it
+
+###In XML
+    <github.arobot.countdownbuttonlibrary.CountDownButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:text="点击倒计时"
+        app:countDown="60"
+        app:countDownInterval="2000"
+        app:countDownStrFormatter="倒计时%s秒" />
+
+"countDown" count down from this number
+"countDownInterval" count down interval,velocity of your count down event
+"countDownStrFormatter" string formatter for your countting down label
+
+###In java code
+
