@@ -1,7 +1,7 @@
 # CountDownButton
 Extends Button with count down founction
 
-You can dependency it with 
+You can dependency it with <br>
     compile 'github.arobot:countdownbuttonlibrary:1.0.0'
 
 
