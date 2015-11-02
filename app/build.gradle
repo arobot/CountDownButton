@@ -26,4 +26,5 @@ dependencies {
     compile 'com.android.support:design:23.1.0'
     compile project(':countdownbuttonlibrary')
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'github.arobot:countdownbuttonlibrary:1.0.0'
 }

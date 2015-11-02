@@ -35,7 +35,11 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        countdown.startCountDown();
+        countdown.startCountDown();     //直接开始倒计时
+        countdown.setCanCountDown(false);//关闭倒计时模式
+        countdown.setCountDown(1000,"点我开始倒计时%s");//设置倒计时参数
+        countdown.setCountInterval(100);//倒计时间隔
+        countdown.setCountLength(1500);
 
     }
 

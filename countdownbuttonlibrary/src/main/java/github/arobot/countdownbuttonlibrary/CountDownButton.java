@@ -49,7 +49,7 @@ public class CountDownButton extends Button {
 
     public CountDownButton(Context context, AttributeSet attrs) {
         super(context, attrs);
-        //获取自定义的XML属性名称
+        //get default xml attrs
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CountDownButton);
         if (a.hasValue(R.styleable.CountDownButton_countDown)) {
             this.canCountDown = true;
@@ -95,7 +95,7 @@ public class CountDownButton extends Button {
     }
 
     /**
-     * @param countLength
+     * @param countLength   count down from this number
      */
     public void setCountLength(int countLength) {
        this.countLength = countLength;
@@ -109,7 +109,7 @@ public class CountDownButton extends Button {
     /**
      * Count down text formatter.{@link java.util.Formatter#format}
      *
-     * @param format
+     * @param format    formatter
      */
     public void setFormat(String format) {
         this.format = format;
@@ -149,7 +149,7 @@ public class CountDownButton extends Button {
     /**
      * Count time interval,default is 1 sec.
      *
-     * @param countInterval
+     * @param countInterval interval in millisecond
      */
     public void setCountInterval(int countInterval) {
         this.countInterval = countInterval;
